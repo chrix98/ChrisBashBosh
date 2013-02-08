@@ -1,0 +1,16 @@
+#!/bin/bash
+
+##	DEV01A
+remote_host[${#remote_host[*]}]="hq.home.lan"
+remote_user[${#remote_user[*]}]="administrator"
+remote_port[${#remote_port[*]}]="22"
+
+##	DEV01B
+remote_host[${#remote_host[*]}]="proxy.home.lan"
+remote_user[${#remote_user[*]}]="administrator"
+remote_port[${#remote_port[*]}]="22"
+
+##	DEV01B
+remote_host[${#remote_host[*]}]="oc.home.lan"
+remote_user[${#remote_user[*]}]="administrator"
+remote_port[${#remote_port[*]}]="22"

@@ -1,0 +1,18 @@
+# My original NT homedir
+SUPERHOME="/cygdrive/c/Users/chris"
+export SUPERHOME
+
+# Root dir for GIT resources
+GROOT="/cygdrive/c/_code/"
+export GROOT
+
+# Root dir for SVN resources
+SROOT="/cygdrive/c/_code/"
+
+
+# Root dir for Customer-Git resources
+CROOT="/cygdrive/c/_code/"
+export CROOT
+
+
+

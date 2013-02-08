@@ -1,0 +1,24 @@
+###	HOME
+
+alias hercules="ssh hercules.petermannlive.com"
+alias minifix="ssh minifix.petermannlive.com"
+
+#	load balancers
+alias lb01="ssh administrator@lb01.cloud"
+alias lb01a="ssh administrator@lb01a.cloud"
+alias lb01b="ssh administrator@lb01b.cloud"
+
+# proxies
+alias proxy="ssh administrator@proxy.cloud"
+
+# ispc servers
+alias ispc01a="ssh administrator@ispc01a.cloud"
+alias ispc01b="ssh administrator@ispc01b.cloud"
+
+# dev webservers
+alias dev01a="ssh administrator@dev01a.cloud"
+alias dev01b="ssh administrator@dev01b.cloud"
+
+
+### WORK
+#alias pods="pod"
