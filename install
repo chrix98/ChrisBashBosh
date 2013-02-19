@@ -1,0 +1,10 @@
+
+put the below if statement into your normal .bashrc file - if you renamed your directory to something else then change the dir name
+
+
+if [ -f ~/.ChrisBashBosh/.bashrc ]; then
+        echo "sourcing ChrisBashBosh framework ...";
+        export ChrisBashBoshPath=".ChrisBashBosh"
+
+        . ~/.ChrisBashBosh/.bashrc
+fi
