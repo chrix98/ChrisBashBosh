@@ -1,0 +1,18 @@
+
+to use host specific setups, get the hostname of your machine and then create a
+directory with the name of "enabled-HOSTNAME" 
+
+example, get your hostname like:
+$> hostname -f
+
+if the result of the above were lets say "Chris-Super-PC" then you'd create a dir 
+like:
+enabled-Chris-Super-PC
+
+inside that directory you create symlinks to the files in "available-global" that 
+you may want available to that host, i.e.
+
+ln -s ../available-global/variables.path
+
+
+Alternatively you can store real files in the hostname dirs ...

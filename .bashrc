@@ -80,82 +80,21 @@ shopt -s cdspell
 ####	Chris' stuff
 
 # source the users aliases if they exist
-if [ -d "${HOME}/.bash_variables" ]; then
-	echo " ... ${HOME}/.bash_variables"
-	for varfile in ${HOME}/.bash_variables/variables.*; do
-		echo "Varfile: $varfile"
-		source "$varfile"
-	done
-else
-	if [ -f "${HOME}/.bash_variables" ]; then
+if [ -f "${HOME}/.bash_variables" ]; then
 	#  echo "  ... ${HOME}/.bash_variables"
-	  source "${HOME}/.bash_variables"
-	fi
+	source "${HOME}/.bash_variables"
 fi
 
 
 # source the users aliases if they exist
 if [ -f "${HOME}/.bash_aliases" ]; then
-#  echo "  ... ${HOME}/.bash_aliases"
+	#  echo "  ... ${HOME}/.bash_aliases"
   source "${HOME}/.bash_aliases"
 fi
 
 # source the users funcs if they exist
-if [ -d "${HOME}/.bash_functions" ]; then
-  echo "  ... ${HOME}/.bash_functions"
-	for helper in ${HOME}/.bash_functions/*.sh; do
-		#echo "Helper: $helper"
-  	source $helper
-	done
-else
-	if [ -f "${HOME}/.bash_functions" ];then
-		source ${HOME}/.bash_functions;	
-	fi
+if [ -f "${HOME}/.bash_functions" ];then
+	source ${HOME}/.bash_functions;	
 fi
 
-# source the user remote login aliases
-if [ -f "${HOME}/.bash_remote_logins" ]; then
-#	echo " ... ${HOME}/.bash_remote_logins"
-	source "${HOME}/.bash_remote_logins"
-fi
-
-
-#####	Adding various bins to path
-
-PATHLIST=(\
-	"/usr/local/bin" \
-	"$HOME/bin" \
-	"/cygdrive/c/Users/chris.petermann/bin" \
-	"/usr/local/rnt/bin" \
-	"${HOME}/pubbin" \
-	"/cygdrive/c/Program Files (x86)/EditPlus 3" \
-	"/cygdrive/c/Program Files (x86)/WinMerge" \
-	"/cygdrive/c/Program Files (x86)/WinSCP" \
-	"/cygdrive/c/Program Files (x86)/NuSphere/PhpED/" \
-	"/cygdrive/c/Program Files (x86)/ActiveState Komodo IDE 6/" \
-	)
-len=${#PATHLIST[*]}
-pathnum=0
-NEWPATH=
-
-#echo "Pathlist has $len items"
-
-while [ $pathnum -lt $len ]; do
-	epath="${PATHLIST[$pathnum]}"
-	#echo "$pathnum : $epath"
-	let pathnum++
-	if [ -d "$epath" ]; then
-		NEWPATH="${NEWPATH}:${epath}"
-	#else
-		#echo "$epath does not exist";
-	fi
-done
-
-if [ -n "$NEWPATH" ]; then
-	#echo "new path: $NEWPATH"
-	PATH="${PATH}:${NEWPATH}"
-	export PATH
-#else
-	#echo "no path changes"
-fi
 

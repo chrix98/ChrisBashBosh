@@ -1,0 +1,14 @@
+
+
+##### Some shortcuts for different directory listings
+ alias ls='ls -hF --color=tty'                 # classify files in colour
+ alias ll='ls -l'                              # long list
+ alias la='ls -Al'                              # all but . and ..
+ alias l='ls -CF'                              #
+ alias lr='l -R'
+ alias llr='ll -R'
+ alias cl='clear;l'       # clears screen then runs l
+ alias cll='clear;ll'       # clears screen then runs ll
+# DOS
+ alias dir='ls --color=auto --format=vertical'
+ alias vdir='ls --color=auto --format=long'

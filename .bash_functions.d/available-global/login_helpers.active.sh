@@ -1,11 +1,13 @@
 #!/bin/bash
-unset remote_host;unset remote_group; unset remote_user; unset remote_port; 
+unset remote_host;unset remote_group; unset remote_user; unset remote_port; unset remote_name; unset remote_farm
 
 declare -a remote_host
 declare -a remote_user
 declare -a remote_port
+declare -a remote_name
+declare -a remote_farm
 
-for srcfile in `find ${HOME}/.bash_variables/ -name remote_login.*.active`; do
+for srcfile in `find ${BASHDIR_VARS} -name remote_login.*.active`; do
 	#echo $srcfile
 	source $srcfile
 done;
@@ -16,20 +18,32 @@ function pod() {
 
 	if [ -z $1 ]; then
 		echo ""
-		echo "****************************************************"
-		echo "*		choose your pod ... wisely!	 *"
-		echo "****************************************************"
-		echo ""
-		
+		echo "	*****************************************************************"
+		echo "	*								*"
+		echo "	*		choose your pod ... wisely!			*"
+
 		i=0;
+		prevFarm="";
+
 		while [ $i -lt ${#remote_host[*]} ]; do
-			echo "	${i} => ${remote_user[i]} @ ${remote_host[i]} on port ${remote_port[i]}";
+			#echo "${remote_farm[i]} => ${prevFarm}"
+			if [ "${remote_farm[i]}" != "${prevFarm}" ]; then
+				echo "	*								*"
+				echo "	*****************************************************************"
+				echo "	*	${remote_farm[i]}						*"
+				echo "	*****************************************************************"
+				prevFarm=${remote_farm[i]}
+			fi
+
+			echo "	*  ${i} - ${remote_name[i]}	[ ${remote_host[i]}:${remote_port[i]} ]		*";
 			let i++;
 		done;
 
-		echo ""
+				echo "	*								*"
+				echo "	*****************************************************************"
+
 		while [[ $choice != [0-9qQ]* ]]  || [ -z ${remote_host[$choice]} ]; do
-				prompt "Whats it gonna be, punk? [enter number]:"
+				prompt "Whats it gonna be, punk? [enter number or q to quit]:"
 		done;
 
 	else
@@ -42,7 +56,7 @@ function pod() {
 	fi
 
 	if [[ $choice != [qQx] ]]; then
-		
+
 		banner "[${remote_host[$choice]//\.cloud/}]"
 		echo ""
 		#echo "${remote_host[$choice]} is a good choice ... connecting..."
@@ -61,9 +75,8 @@ function pod() {
 }
 
 function prompt() {
-	echo "	q => quit"
 	echo ""
-	echo -n "  ${1}";
+	echo -n "	${1}";
 	read choice
 	#return "$choice"
 }

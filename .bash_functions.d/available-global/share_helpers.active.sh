@@ -14,7 +14,7 @@ function share_bash()
 
 	echo "attempting to copy bash utils to host: $1";
 
-	gatherFiles
+	copyBashFiles
 
 	if [ -z "$host" ]; then
 		echo "no host specified?"
@@ -41,7 +41,7 @@ function share_bash()
 	fi
 }
 
-function gatherFiles()
+function copyBashFiles()
 {
     cd ~;
     for file in $file_list;

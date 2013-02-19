@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+
+##########################################################
+#	checking if we have a .bash_variables.d directory and if
+#	so then sourcing the files from there.
+##########################################################
+
+if [ -d "${HOME}/.bash_variables.d" ]; then
+  echo " ... ${HOME}/.bash_variables.d"
+	if [ -d "${HOME}/.bash_variables.d/enabled-$(hostname)" ]; then
+		BASHDIR_VARS="${HOME}/.bash_variables.d/enabled-$(hostname)"
+	else
+		BASHDIR_VARS="${HOME}/.bash_variables.d/available-global"
+	fi
+
+  for varfile in ${BASHDIR_VARS}/variables.*.active ; do
+  	echo "sourcing Varfile: $varfile"
+    source "$varfile"
+  done
+#	source ${BASHDIR_VARS}/variables.*.active;
+
+fi

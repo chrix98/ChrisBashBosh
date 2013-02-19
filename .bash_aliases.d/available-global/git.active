@@ -1,0 +1,11 @@
+
+
+##### GIT aliases
+ alias git-ignore='echo $1 >> `pwd`/.gitignore'
+ alias git-lastcommit='git log -n1|grep -Eo "([a-z0-9]{40})"'
+ alias git-commitlist='git log|grep commit|grep -P -o [a-z0-9]{40}$'
+# alias git-addnew='for i in `git status -s |grep ??`; do if [ $i != "??" ]; then git add ${i}; fi; done'
+ alias gatus='git status'
+ alias granch='git branch -a'
+ alias giff='git diff'
+ alias gadd='git add'

@@ -1,0 +1,7 @@
+
+##### Dir changing aliases
+
+alias gcd='changedir2workingdir ${GROOT} $1'
+alias wcd='changedir2workingdir ${WROOT} $1'
+
+alias scd='cd $SUPERHOME'

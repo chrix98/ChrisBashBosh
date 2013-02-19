@@ -1,10 +1,8 @@
 #!/bin/bash
 
-echo "remote_host count  ${#remote_host[*]}"
-
 ##	This is a template file - create a copy and rename it as needed
 ##	The name ideally reflects a group of remote_logins but this is not necessary
-##	important however that the file prefix of "remote_login." remains, 
+##	important however that the file prefix of "remote_login." remains,
 ##	after the dot can be anything you like
 ##		e.g. ".bash_variables/remote_login.webfarm"
 ###
@@ -16,8 +14,14 @@ remote_group[${#remote_group}]="My Server Group A";
 remote_host[${#remote_host[*]}]="groupA_hostA.domain"
 remote_user[${#remote_user[*]}]="administrator"
 remote_port[${#remote_port[*]}]="22"
+remote_name[${#remote_name[*]}]="Host-A"
+remote_farm[${#remote_farm[*]}]="groupA";
+
 
 ##	My HostB
 remote_host[${#remote_host[*]}]="groupA_hostB.domain"
 remote_user[${#remote_user[*]}]="administrator"
 remote_port[${#remote_port[*]}]="22"
+remote_name[${#remote_name[*]}]="Host-B"
+remote_farm[${#remote_farm[*]}]="GroupA";
+

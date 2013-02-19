@@ -1,0 +1,45 @@
+#!/bin/bash
+
+##### Adding various bins to path
+
+PATHLIST=(\
+  "/usr/local/bin" \
+  "$HOME/bin" \
+  "/cygdrive/c/Users/chris.petermann/bin" \
+  "/usr/local/rnt/bin" \
+  "${HOME}/pubbin" \
+  "/cygdrive/c/Program Files (x86)/EditPlus 3" \
+  "/cygdrive/c/Program Files (x86)/WinMerge" \
+  "/cygdrive/c/Program Files (x86)/WinSCP" \
+  "/cygdrive/c/Program Files (x86)/NuSphere/PhpED/" \
+  "/cygdrive/c/Program Files (x86)/ActiveState Komodo IDE 6/" \
+)
+
+
+####################	DO NOT EDIT BELOW HERE ##########################
+
+len=${#PATHLIST[*]}
+pathnum=0
+NEWPATH=
+                      
+#echo "Pathlist has $len items"
+                   
+while [ $pathnum -lt $len ]; do
+	epath="${PATHLIST[$pathnum]}"
+	#echo "$pathnum : $epath"
+	let pathnum++
+  if [ -d "$epath" ]; then
+		NEWPATH="${NEWPATH}:${epath}"
+	#else
+		#echo "$epath does not exist";
+  fi
+done
+                                          
+if [ -n "$NEWPATH" ]; then
+	#echo "new path: $NEWPATH"
+	PATH="${PATH}:${NEWPATH}"
+	export PATH
+#else
+	#echo "no path changes"
+fi
+                                                  

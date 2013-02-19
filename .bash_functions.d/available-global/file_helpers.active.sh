@@ -86,3 +86,43 @@ function multi_dos2unix()
 		fi
 	done;
 }
+
+
+function fcount()
+{
+	##  fcount
+	##  counts the number of files matching the regular expression pattern
+	##
+	##
+
+
+	if [ -z $1 ]; then
+
+	  echo ""
+	  echo "  fcount searchstring"
+	  echo ""
+	  echo " searchstring:  regular expression to match the file name that you want to count"
+	  echo ""
+	  echo " example: in /var/log/ you'd do:"
+	  echo "    fcount messages"
+	  echo ""
+	  echo " fcount then tells you how many files there are matching the patterns to their name"
+	  echo ""
+	  echo " CVS:\$Id\$"
+
+	  exit 0;
+
+	fi
+
+	##  the counter
+	i=0
+
+	for d in `ls|grep -i ${1}`; do
+
+	  i=$(($i+1))
+
+	done;
+
+	echo "${i} files match ${1}";
+
+}

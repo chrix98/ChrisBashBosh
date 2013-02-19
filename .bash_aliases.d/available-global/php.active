@@ -1,0 +1,5 @@
+
+##### DEBUG aliases
+ alias php5='/cygdrive/c/Program\ Files\ \(x86\)/NuSphere/PhpED/php5/php.exe'
+ alias php='/cygdrive/c/Program\ Files\ \(x86\)/NuSphere/PhpED/php/php.exe'
+ alias php53='/cygdrive/c/Program\ Files\ \(x86\)/NuSphere/PhpED/php53/php.exe'

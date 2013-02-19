@@ -1,0 +1,9 @@
+
+
+##### SCREEN aliases
+alias screens='screen -list'     # shows list of screens
+alias screenu='screen -mS'     # creates new screen by name
+alias screenr='screen -r'      # resumes specified screen
+alias screenl='screenr `ls -t $(screen -list|grep -P -o "[a-zA-Z0-9/]+S\-$(whoami)")/ |head  -n1|grep -Po [0-9]+\.[a-zA-Z0-9\-_]+`' # resumes the last used screen    
+
+    
