@@ -32,20 +32,20 @@ umask 002
 
 #echo "sourcing ..."
 # source the users bashrc if it exists
-if [ -f "${HOME}/.bashrc" ] ; then
-#	echo "	... ${HOME}/.bashrc"
-  source "${HOME}/.bashrc"
+if [ -f "${CBBINSTALLDIR}/.bashrc" ] ; then
+#	echo "	... ${CBBINSTALLDIR}/.bashrc"
+  source "${CBBINSTALLDIR}/.bashrc"
 fi
 
 
 # Set MANPATH so it includes users' private man if it exists
-# if [ -d "${HOME}/man" ]; then
-#   MANPATH="${HOME}/man:${MANPATH}"
+# if [ -d "${CBBINSTALLDIR}/man" ]; then
+#   MANPATH="${CBBINSTALLDIR}/man:${MANPATH}"
 # fi
 
 # Set INFOPATH so it includes users' private info if it exists
-# if [ -d "${HOME}/info" ]; then
-#   INFOPATH="${HOME}/info:${INFOPATH}"
+# if [ -d "${CBBINSTALLDIR}/info" ]; then
+#   INFOPATH="${CBBINSTALLDIR}/info:${INFOPATH}"
 # fi
 # export MANPATH INFOPATH;
 
@@ -54,7 +54,7 @@ fi
 
 
 if [ -z $BASHHERE ]; then
-	BASHHERE=${HOME}
+	BASHHERE=${CBBINSTALLDIR}
 else
 	BASHHERE="$(cygpath -u -a ${BASHHERE//\"})"
 fi

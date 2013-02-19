@@ -7,12 +7,12 @@
 #	so then sourcing the files from there.
 ##########################################################
 
-if [ -d "${HOME}/.bash_variables.d" ]; then
-  echo " ... ${HOME}/.bash_variables.d"
-	if [ -d "${HOME}/.bash_variables.d/enabled-$(hostname)" ]; then
-		BASHDIR_VARS="${HOME}/.bash_variables.d/enabled-$(hostname)"
+if [ -d "${CBBINSTALLDIR}/.bash_variables.d" ]; then
+  echo " ... ${CBBINSTALLDIR}/.bash_variables.d"
+	if [ -d "${CBBINSTALLDIR}/.bash_variables.d/enabled-$(hostname)" ]; then
+		BASHDIR_VARS="${CBBINSTALLDIR}/.bash_variables.d/enabled-$(hostname)"
 	else
-		BASHDIR_VARS="${HOME}/.bash_variables.d/available-global"
+		BASHDIR_VARS="${CBBINSTALLDIR}/.bash_variables.d/available-global"
 	fi
 
   for varfile in ${BASHDIR_VARS}/variables.*.active ; do
