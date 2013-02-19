@@ -46,15 +46,14 @@ fi
 # Set INFOPATH so it includes users' private info if it exists
 # if [ -d "${CBBINSTALLDIR}/info" ]; then
 #   INFOPATH="${CBBINSTALLDIR}/info:${INFOPATH}"
-# fi
-# export MANPATH INFOPATH;
+
 
 
 #####	Custom startup stuff 
 
 
 if [ -z $BASHHERE ]; then
-	BASHHERE=${CBBINSTALLDIR}
+	BASHHERE=${HOME}
 else
 	BASHHERE="$(cygpath -u -a ${BASHHERE//\"})"
 fi

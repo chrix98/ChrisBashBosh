@@ -6,6 +6,7 @@ if [ -d "${CBBINSTALLDIR}/.bash_functions.d" ]; then
     BASHDIR_FUNCS="${CBBINSTALLDIR}/.bash_functions.d/enabled-$(hostname)"
   else
     BASHDIR_FUNCS="${CBBINSTALLDIR}/.bash_functions.d/available-global"
+
   fi
 
 	for helper in ${BASHDIR_FUNCS}/*.active.sh; do

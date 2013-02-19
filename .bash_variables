@@ -13,6 +13,7 @@ if [ -d "${CBBINSTALLDIR}/.bash_variables.d" ]; then
 		BASHDIR_VARS="${CBBINSTALLDIR}/.bash_variables.d/enabled-$(hostname)"
 	else
 		BASHDIR_VARS="${CBBINSTALLDIR}/.bash_variables.d/available-global"
+
 	fi
 
   for varfile in ${BASHDIR_VARS}/variables.*.active ; do
