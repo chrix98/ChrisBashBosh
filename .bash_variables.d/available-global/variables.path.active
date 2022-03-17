@@ -5,14 +5,9 @@
 PATHLIST=(\
   "/usr/local/bin" \
   "$HOME/bin" \
-  "/cygdrive/c/Users/chris.petermann/bin" \
-  "/usr/local/rnt/bin" \
   "${HOME}/pubbin" \
-  "/cygdrive/c/Program Files (x86)/EditPlus 3" \
   "/cygdrive/c/Program Files (x86)/WinMerge" \
   "/cygdrive/c/Program Files (x86)/WinSCP" \
-  "/cygdrive/c/Program Files (x86)/NuSphere/PhpED/" \
-  "/cygdrive/c/Program Files (x86)/ActiveState Komodo IDE 6/" \
 )
 
 
